@@ -15,5 +15,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface AdminRepository extends JpaRepository<Clientes, Integer> {
-   Clientes findByCedula(int cedula);
+    Clientes findByCedula(String cedula);
 }

@@ -16,6 +16,6 @@ import com.mercadoNet.demo.Models.Clientes;
 
 @Repository
 public interface ClientesRepository extends JpaRepository<Clientes, Integer>{
-    Clientes findByCedula(int cedula);
-    
+    Clientes findByCedula(String cedula);
+    void deleteByCedula(String cedula);
 }

@@ -9,6 +9,7 @@ import com.mercadoNet.demo.Repositories.ClientesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.mercadoNet.demo.Models.Clientes;
+import jakarta.transaction.Transactional;
 
 import java.util.List;
 import org.springframework.http.HttpStatus;
@@ -28,7 +29,8 @@ public class ClientesService {
         return objservaut.findAll();
     }
 
-    public Clientes traercliente(int Cedula) {
+    @Transactional
+    public Clientes traercliente(String Cedula) {
         Clientes infocliente = objservaut.findByCedula(Cedula);
         if (infocliente != null) {
             return infocliente;
@@ -59,14 +61,17 @@ public class ClientesService {
         }
     }
     
-    public String eliminarcliente(int Cedula) {
+    @Transactional
+    public String eliminarcliente(String Cedula) {
         Clientes infocliente = objservaut.findByCedula(Cedula);
         if (infocliente != null) {
-            objservaut.deleteById(infocliente.getCedula());
+            objservaut.deleteByCedula(Cedula);
             return "El cliente se eliminó exitosamente";
         } else {
-            throw new CustomException(HttpStatus.NOT_FOUND.value(), "El cliente no se encontro para eliminar");
+            throw new CustomException(HttpStatus.NOT_FOUND.value(), "El cliente con cédula " + Cedula + " no se encontró para eliminar.");
         }
     }
+    
+   
 
 }

@@ -46,7 +46,7 @@ public class ClientesController {
     }
 
     @GetMapping("/traercliente")
-    public ResponseEntity<?> traercliente(@RequestParam int Cedula, @RequestHeader(value = "Authorization") String Token) {
+    public ResponseEntity<?> traercliente(@RequestParam String Cedula, @RequestHeader(value = "Authorization") String Token) {
         try {
             boolean response = objbal.Authjwt(Token);
             if (response) {
@@ -96,7 +96,7 @@ public class ClientesController {
     }
     
     @DeleteMapping("/eliminarcliente")
-    public ResponseEntity<?> eliminarcliente(@RequestParam int Cedula, @RequestHeader(value = "Authorization") String Token) {
+    public ResponseEntity<?> eliminarcliente(@RequestParam String Cedula, @RequestHeader(value = "Authorization") String Token) {
         try {
             boolean response = objbal.Authjwt(Token);
             if (response) {

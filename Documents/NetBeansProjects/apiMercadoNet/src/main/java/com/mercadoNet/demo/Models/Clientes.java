@@ -36,9 +36,9 @@ public class Clientes implements Serializable {
 
     @Basic(optional = false)
     @Column(name = "CEDULA")
-    private int cedula;
+    private String cedula;
 
     @Basic(optional = false)
     @Column(name = "TELEFONO")
-    private int telefono;
+    private String telefono;
 }

@@ -36,7 +36,7 @@ public class AdminService {
         if(!infoadmin.getNombre().equals(log.getNombre())){
             throw new CustomException(HttpStatus.CONFLICT.value(), "El nombre es incorrecto");
         }
-        if(infoadmin.getCedula()!= log.getCedula()){
+        if(!infoadmin.getCedula().equals(log.getCedula())){
             throw new CustomException(HttpStatus.CONFLICT.value(), "La cédula es incorrecta");
         }
         String token = objtokutils.GenerateToken(String.valueOf(log.getCedula()));

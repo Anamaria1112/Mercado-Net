@@ -15,6 +15,6 @@ import lombok.Data;
 public class DtoLogin {
     
     private String nombre;
-    private int cedula;
+    private String cedula;
   
 }
