@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
  *
  * @author anama
  */
+
 @RestController
 @CrossOrigin("*")
 @RequestMapping("/admin/")
