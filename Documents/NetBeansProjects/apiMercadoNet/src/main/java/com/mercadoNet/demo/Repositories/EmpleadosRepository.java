@@ -4,19 +4,20 @@
  */
 package com.mercadoNet.demo.Repositories;
 
-import com.mercadoNet.demo.Models.Productos;
+import com.mercadoNet.demo.Models.Empleados;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import java.util.Optional;
+
 
 /**
  *
  * @author anama
  */
+
+
 @Repository
-public interface ProductoRepository extends JpaRepository<Productos, Integer>{
-    Optional<Productos> findById(Integer idProductos);
-    void deleteById(Integer idProductos);
+public interface EmpleadosRepository extends JpaRepository<Empleados, Integer> {
+    Optional<Empleados> findById(Integer idEmpleado);
+    void deleteById(Integer idEmpleado);
 }
-
-
